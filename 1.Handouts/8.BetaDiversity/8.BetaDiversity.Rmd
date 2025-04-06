@@ -370,7 +370,7 @@ In addition, we are going to set *k* = 3 (number of dimensions we want returned)
 fish.pcoa <- cmdscale(fish.db, eig = TRUE, k = 3) 
 ```
 
-###ii. Interpreting PCoA Output
+### ii. Interpreting PCoA Output
 The `cmdscale` function produces a list of output.
 The first item *points* contains the coordinates for each site in each reduced dimension.
 The second item *eig* contains the eigenvalues.
@@ -391,7 +391,7 @@ sum.eig <- sum(explainvar1, explainvar2, explainvar3)
 
 #### See APPENDIX for other ways to assess how well PCoA explains variation in your data 
 
-###iii. Creating a PCoA Ordination Plot 
+### iii. Creating a PCoA Ordination Plot 
 Having evaluated the PCoA output, now we will create an ordination plot.
 We will plot all of the fish assemblages of the Doubs River for the first two PCoA axes. 
 
@@ -418,7 +418,7 @@ text(fish.pcoa$points[ ,1], fish.pcoa$points[ ,2],
      labels = row.names(fish.pcoa$points))
 ```
 
-###iv. Identifying and Visualizing Influential Species in PCoA 
+### iv. Identifying and Visualizing Influential Species in PCoA 
 Basic ordination plots allow us to see how samples separate from one another. 
 A logical follow-up is to ask what features of the dataset are driving the observed divergence among points.
 In the Doubs River example, sites are separating along the PCoA axes owing to variation in the abundance of different fish species. 
@@ -480,7 +480,7 @@ Let's test the hypothesis that fish community composition varies with river qual
 quality <- c(rep("HQ", 13), rep("MQ", 5), rep("LQ", 6), rep("MQ", 5))
 
 # Run PERMANOVA with adonis function
-adonis(fish ~ quality, method = "bray", permutations = 999)
+adonis2(fish ~ quality, method = "bray", permutations = 999)
 ```
 
 ### ii. Species--Site Group Associations
